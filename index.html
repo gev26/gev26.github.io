@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihran Miroyan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-right: 1px solid #e9ecef;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            border: 3px solid #e9ecef;
+        }
+
+        .profile-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            border: 3px solid #e9ecef;
+        }
+
+        .sidebar h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .sidebar .subtitle {
+            font-size: 0.95rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #495057;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info .icon {
+            margin-right: 10px;
+            width: 16px;
+            color: #6c757d;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content */
+        .main-content {
+            margin-left: 300px;
+            padding: 40px 50px;
+            flex: 1;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #8e8e93;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            margin-bottom: 16px;
+            color: #495057;
+            text-align: justify;
+        }
+
+        .section a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Publications */
+        .publication {
+            margin-bottom: 30px;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: #0066cc;
+            margin-bottom: 6px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.05rem;
+        }
+
+        .pub-title:hover {
+            text-decoration: underline;
+        }
+
+        .pub-authors {
+            color: #495057;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .pub-authors strong {
+            font-weight: 600;
+        }
+
+        .pub-venue {
+            color: #6c757d;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Work in Progress */
+        .wip-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #e9ecef;
+        }
+
+        .wip-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 6px;
+        }
+
+        .wip-description {
+            color: #495057;
+            font-size: 0.95rem;
+        }
+
+        /* Teaching */
+        .course {
+            margin-bottom: 20px;
+        }
+
+        .course-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .course-details {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 30px 20px;
+            }
+            
+            .profile-image,
+            .profile-placeholder {
+                width: 120px;
+                height: 120px;
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-placeholder">MM</div>
+            
+            <h1>Mihran Miroyan</h1>
+            <p class="subtitle">PhD Candidate at UC Berkeley</p>
+            
+            <ul class="contact-info">
+                <li>
+                    <span class="icon">📍</span>
+                    Berkeley, CA, USA
+                </li>
+                <li>
+                    <span class="icon">🏛️</span>
+                    UC Berkeley
+                </li>
+                <li>
+                    <span class="icon">✉️</span>
+                    <a href="mailto:miroyan.mihran[at]berkeley.edu">miroyan.mihran[at]berkeley.edu</a>
+                </li>
+                <li>
+                    <span class="icon">🎓</span>
+                    <a href="#">Google Scholar</a>
+                </li>
+                <li>
+                    <span class="icon">📄</span>
+                    <a href="#">CV</a>
+                </li>
+                <li>
+                    <span class="icon">💼</span>
+                    <a href="#">LinkedIn</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="page-title">Mihran Miroyan</h1>
+            
+            <section class="section">
+                <h2>About me</h2>
+                <p>I am a first-year EECS PhD student at UC Berkeley, broadly interested in AI-psychology, human-AI interaction, agentic systems, and AI for education. I am happily advised by <a href="#">Narges Norouzi</a> and <a href="#">Joey Gonzalez</a>. I am affiliated with <a href="#">Sky Computing Lab</a> and <a href="#">Berkeley AI Research (BAIR)</a>. I am also fortunate enough to closely work with <a href="#">Gireeja Ranade</a>.</p>
+                
+                <p>Previously, I earned my B.A. degree in CS (Honors) and Statistics from the <a href="#">College of Computing, Data Science, and Society (CDSS)</a> at UC Berkeley; my undergraduate research was focused on AI for Education.</p>
+            </section>
+
+            <section class="section">
+                <h2>Conference Papers</h2>
+                
+                <div class="publication">
+                    <a href="#" class="pub-title">Analyzing Pedagogical Quality and Efficiency of LLM Responses with TA Feedback to Live Student Questions</a>
+                    <div class="pub-authors"><strong>Mihran Miroyan*</strong>, Chancharik Mitra*, Rishi Jain, Gireeja Ranade, Narges Norouzi.</div>
+                    <div class="pub-venue">SIGCSE 2025</div>
+                </div>
+                
+                <div class="publication">
+                    <a href="#" class="pub-title">RetLLM-E: Retrieval-Prompt Strategy for Question-Answering on Student Discussion Forums</a>
+                    <div class="pub-authors">Chancharik Mitra*, <strong>Mihran Miroyan*</strong>, Rishi Jain*, Vedant Kumud, Gireeja Ranade, Narges Norouzi.</div>
+                    <div class="pub-venue">AAAI 2024</div>
+                </div>
+                
+                <div class="publication">
+                    <a href="#" class="pub-title">EIT: Earnest Insight Toolkit for Evaluating Students' Earnestness in Interactive Lecture Participation Exercises</a>
+                    <div class="pub-authors"><strong>Mihran Miroyan*</strong>, Shiny Weng*, Rahul Shah, Lisa Yan, Narges Norouzi.</div>
+                    <div class="pub-venue">SIGCSE 2024</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Work in Progress</h2>
+                
+                <div class="wip-item">
+                    <div class="wip-title">Understanding Human-AI Collaboration in Educational Question-Answering</div>
+                    <div class="wip-description">Investigating how students interact with AI tutoring systems and optimizing feedback mechanisms for better learning outcomes.</div>
+                </div>
+                
+                <div class="wip-item">
+                    <div class="wip-title">Agentic Systems for Personalized Learning</div>
+                    <div class="wip-description">Developing autonomous agents that can adapt to individual student learning patterns and provide customized educational experiences.</div>
+                </div>
+                
+                <div class="wip-item">
+                    <div class="wip-title">Psychological Aspects of AI-Human Interaction in Learning Environments</div>
+                    <div class="wip-description">Exploring the psychological factors that influence student engagement with AI-powered educational tools.</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Teaching</h2>
+                
+                <div class="course">
+                    <div class="course-title">CS 61A: Structure and Interpretation of Computer Programs</div>
+                    <div class="course-details">Fall 2023 • Undergraduate Teaching Assistant</div>
+                </div>
+                
+                <div class="course">
+                    <div class="course-title">CS 70: Discrete Mathematics and Probability Theory</div>
+                    <div class="course-details">Spring 2023 • Undergraduate Teaching Assistant</div>
+                </div>
+                
+                <div class="course">
+                    <div class="course-title">Data 8: Foundations of Data Science</div>
+                    <div class="course-details">Fall 2022 • Undergraduate Teaching Assistant</div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
