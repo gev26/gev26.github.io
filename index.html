@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mihran Miroyan</title>
+    <title>Gevorg Khandamiryan</title>
     <style>
         * {
             margin: 0;
@@ -144,56 +144,70 @@
             text-decoration: underline;
         }
 
-        /* Publications */
-        .publication {
-            margin-bottom: 30px;
-        }
-
-        .pub-title {
-            font-weight: 600;
-            color: #0066cc;
-            margin-bottom: 6px;
-            text-decoration: none;
-            display: block;
-            font-size: 1.05rem;
-        }
-
-        .pub-title:hover {
-            text-decoration: underline;
-        }
-
-        .pub-authors {
-            color: #495057;
-            margin-bottom: 4px;
-            font-size: 0.95rem;
-        }
-
-        .pub-authors strong {
-            font-weight: 600;
-        }
-
-        .pub-venue {
-            color: #6c757d;
-            font-style: italic;
-            font-size: 0.9rem;
-        }
-
         /* Work in Progress */
         .wip-item {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             padding-left: 20px;
             border-left: 3px solid #e9ecef;
         }
 
         .wip-title {
             font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 6px;
+            color: #0066cc;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.05rem;
         }
 
-        .wip-description {
+        .wip-title:hover {
+            text-decoration: underline;
+        }
+
+        .abstract-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            font-size: 0.9rem;
             color: #495057;
+            user-select: none;
+        }
+
+        .abstract-toggle:hover {
+            color: #0066cc;
+        }
+
+        .toggle-arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .toggle-arrow.open {
+            transform: rotate(90deg);
+        }
+
+        .abstract-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 0 15px;
+            margin-top: 10px;
+        }
+
+        .abstract-content.open {
+            max-height: 500px;
+            padding: 15px;
+        }
+
+        .abstract-content p {
+            margin: 0;
             font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
         }
 
         /* Teaching */
@@ -242,10 +256,13 @@
 <body>
     <div class="container">
         <aside class="sidebar">
-            <div class="profile-placeholder">MM</div>
+            <!-- Replace this div with an img tag when you have your photo -->
+            <div class="profile-placeholder">GK</div>
+            <!-- When you have your photo, replace the above div with: -->
+            <!-- <img src="profile.jpg" alt="Gevorg Khandamiryan" class="profile-image"> -->
             
-            <h1>Mihran Miroyan</h1>
-            <p class="subtitle">PhD Candidate at UC Berkeley</p>
+            <h1>Gevorg Khandamiryan</h1>
+            <p class="subtitle">Economics PhD at UC Berkeley</p>
             
             <ul class="contact-info">
                 <li>
@@ -258,15 +275,11 @@
                 </li>
                 <li>
                     <span class="icon">✉️</span>
-                    <a href="mailto:miroyan.mihran[at]berkeley.edu">miroyan.mihran[at]berkeley.edu</a>
-                </li>
-                <li>
-                    <span class="icon">🎓</span>
-                    <a href="#">Google Scholar</a>
+                    <a href="mailto:gevorgkh@berkeley.edu">gevorgkh@berkeley.edu</a>
                 </li>
                 <li>
                     <span class="icon">📄</span>
-                    <a href="#">CV</a>
+                    <a href="cv.pdf">CV</a>
                 </li>
                 <li>
                     <span class="icon">💼</span>
@@ -276,53 +289,27 @@
         </aside>
 
         <main class="main-content">
-            <h1 class="page-title">Mihran Miroyan</h1>
+            <h1 class="page-title">Gevorg Khandamiryan</h1>
             
             <section class="section">
                 <h2>About me</h2>
-                <p>I am a first-year EECS PhD student at UC Berkeley, broadly interested in AI-psychology, human-AI interaction, agentic systems, and AI for education. I am happily advised by <a href="#">Narges Norouzi</a> and <a href="#">Joey Gonzalez</a>. I am affiliated with <a href="#">Sky Computing Lab</a> and <a href="#">Berkeley AI Research (BAIR)</a>. I am also fortunate enough to closely work with <a href="#">Gireeja Ranade</a>.</p>
+                <p>I am a third year PhD in the economics department at UC Berkeley. My research interests include econometrics, networks and behavioral economics.</p>
                 
-                <p>Previously, I earned my B.A. degree in CS (Honors) and Statistics from the <a href="#">College of Computing, Data Science, and Society (CDSS)</a> at UC Berkeley; my undergraduate research was focused on AI for Education.</p>
-            </section>
-
-            <section class="section">
-                <h2>Conference Papers</h2>
-                
-                <div class="publication">
-                    <a href="#" class="pub-title">Analyzing Pedagogical Quality and Efficiency of LLM Responses with TA Feedback to Live Student Questions</a>
-                    <div class="pub-authors"><strong>Mihran Miroyan*</strong>, Chancharik Mitra*, Rishi Jain, Gireeja Ranade, Narges Norouzi.</div>
-                    <div class="pub-venue">SIGCSE 2025</div>
-                </div>
-                
-                <div class="publication">
-                    <a href="#" class="pub-title">RetLLM-E: Retrieval-Prompt Strategy for Question-Answering on Student Discussion Forums</a>
-                    <div class="pub-authors">Chancharik Mitra*, <strong>Mihran Miroyan*</strong>, Rishi Jain*, Vedant Kumud, Gireeja Ranade, Narges Norouzi.</div>
-                    <div class="pub-venue">AAAI 2024</div>
-                </div>
-                
-                <div class="publication">
-                    <a href="#" class="pub-title">EIT: Earnest Insight Toolkit for Evaluating Students' Earnestness in Interactive Lecture Participation Exercises</a>
-                    <div class="pub-authors"><strong>Mihran Miroyan*</strong>, Shiny Weng*, Rahul Shah, Lisa Yan, Narges Norouzi.</div>
-                    <div class="pub-venue">SIGCSE 2024</div>
-                </div>
+                <p>Previously, I earned MPhil from the University of Oxford, and B.A. in Economics and Applied Mathematics from UC Berkeley.</p>
             </section>
 
             <section class="section">
                 <h2>Work in Progress</h2>
                 
                 <div class="wip-item">
-                    <div class="wip-title">Understanding Human-AI Collaboration in Educational Question-Answering</div>
-                    <div class="wip-description">Investigating how students interact with AI tutoring systems and optimizing feedback mechanisms for better learning outcomes.</div>
-                </div>
-                
-                <div class="wip-item">
-                    <div class="wip-title">Agentic Systems for Personalized Learning</div>
-                    <div class="wip-description">Developing autonomous agents that can adapt to individual student learning patterns and provide customized educational experiences.</div>
-                </div>
-                
-                <div class="wip-item">
-                    <div class="wip-title">Psychological Aspects of AI-Human Interaction in Learning Environments</div>
-                    <div class="wip-description">Exploring the psychological factors that influence student engagement with AI-powered educational tools.</div>
+                    <a href="#" class="wip-title">Generalized Mundlak Estimators with Network Interference</a>
+                    <div class="abstract-toggle" onclick="toggleAbstract('abstract1')">
+                        <span class="toggle-arrow" id="arrow1">▶</span>
+                        <span>Abstract</span>
+                    </div>
+                    <div class="abstract-content" id="abstract1">
+                        <p>This paper extends the Generalized Mundlak Estimator (GME) framework of Arkhangelsky and Imbens (2024) to settings with network interference. In a fixed effect setup group-level unconfoundedness is tackled by balancing statistics, which can include group-level averages of regressors, treatments, and their functions, such that it is sufficient to eliminate differences between groups. When units are connected in a logistic network formation model, network's degree sequence is a sufficient statistic for the unobserved heterogeneity, and the joint distribution of covariates and treatments belongs to an exponential family. Group unconfoundedness can be tackled by using this statistic to determine the group membership of each unit and construct balancing scores according to those clusters. A doubly robust AIPW estimator that uses these balancing statistics is consistent and has nice asymptotic properties, as illustrated in a simulation study.</p>
+                    </div>
                 </div>
             </section>
 
@@ -330,21 +317,28 @@
                 <h2>Teaching</h2>
                 
                 <div class="course">
-                    <div class="course-title">CS 61A: Structure and Interpretation of Computer Programs</div>
-                    <div class="course-details">Fall 2023 • Undergraduate Teaching Assistant</div>
-                </div>
-                
-                <div class="course">
-                    <div class="course-title">CS 70: Discrete Mathematics and Probability Theory</div>
-                    <div class="course-details">Spring 2023 • Undergraduate Teaching Assistant</div>
-                </div>
-                
-                <div class="course">
-                    <div class="course-title">Data 8: Foundations of Data Science</div>
-                    <div class="course-details">Fall 2022 • Undergraduate Teaching Assistant</div>
+                    <div class="course-title">ECON141: Econometrics (math intensive)</div>
+                    <div class="course-details">Fall 2025, Spring 2025, Fall 2024</div>
                 </div>
             </section>
         </main>
     </div>
+
+    <script>
+        function toggleAbstract(id) {
+            const content = document.getElementById(id);
+            const arrow = document.getElementById('arrow' + id.slice(-1));
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+                arrow.textContent = '▶';
+            } else {
+                content.classList.add('open');
+                arrow.classList.add('open');
+                arrow.textContent = '▼';
+            }
+        }
+    </script>
 </body>
 </html>
