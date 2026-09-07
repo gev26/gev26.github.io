@@ -15,7 +15,8 @@
             --rule: #e4e4e4;
             --bg: #ffffff;
             --serif: "Charter", "Bitstream Charter", "Iowan Old Style", "Sitka Text", Georgia, "Times New Roman", serif;
-            --measure: 40rem;       /* ~640px: about 75 characters per line */
+            --measure: 50rem;       /* ~800px content column; raise or lower to taste */
+            --photo: 150px;         /* profile photo size on desktop */
         }
 
         * { box-sizing: border-box; }
@@ -34,7 +35,7 @@
         .page {
             max-width: var(--measure);
             margin: 0 auto;
-            padding: 4rem 1.5rem 3rem;
+            padding: 4rem 2rem 3rem;
         }
 
         a {
@@ -54,14 +55,14 @@
         /* Header */
         .masthead {
             display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
+            align-items: center;
+            gap: 2rem;
             margin-bottom: 2.5rem;
         }
 
         .masthead img {
-            width: 96px;
-            height: 96px;
+            width: var(--photo);
+            height: var(--photo);
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid var(--rule);
@@ -69,16 +70,11 @@
         }
 
         .masthead h1 {
-            margin: 0 0 0.25rem;
-            font-size: 2.125rem;
+            margin: 0 0 0.6rem;
+            font-size: 2.25rem;
             font-weight: 700;
             line-height: 1.15;
             letter-spacing: -0.01em;
-        }
-
-        .masthead .role {
-            margin: 0 0 0.75rem;
-            color: var(--muted);
         }
 
         .contact {
@@ -214,9 +210,10 @@
             a, details.abstract summary { transition: color 0.1s ease; }
         }
 
-        @media (max-width: 480px) {
-            .page { padding-top: 2.5rem; }
-            .masthead { flex-direction: column; gap: 1rem; }
+        @media (max-width: 640px) {
+            .page { padding: 2.5rem 1.25rem 3rem; }
+            .masthead { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .masthead img { width: 120px; height: 120px; }
             .masthead h1 { font-size: 1.75rem; }
             .courses { grid-template-columns: 1fr; gap: 0.1rem 0; }
             .courses dd { text-align: left; margin-bottom: 0.6rem; }
@@ -291,7 +288,7 @@
                     <dd>Spring 2026</dd>
                     <dt>ECON 141: Econometrics (math intensive)</dt>
                     <dd>Fall 2025, Spring 2025, Fall 2024</dd>
-                    <dt>ECON 140: Econometrics </dt>
+                    <dt>ECON 140: Econometrics</dt>
                     <dd>Fall 2026, Summer 2026</dd>
                     <dt>ECON 1: Introduction to Economics</dt>
                     <dd>Spring 2019 - 2020, Fall 2023, Spring 2024, Summer 2024 - 2025</dd>
